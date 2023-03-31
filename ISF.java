@@ -32,10 +32,15 @@ public class ISF {
     }
 
     int countPlayersInNSFs(){
-        return 0;
+        int count = 0;
+        for (int i = 0; i < nsfs.size(); i++){
+            count = count + nsfs.get(i).getPlayers().size();
+        }
+        return count;
     }
 
     boolean addNSF (NSF nsf){
-        return false;
+        this.nsfs.add(nsf);
+        return true;
     }
 }

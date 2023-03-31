@@ -28,7 +28,11 @@ public class IOC {
     }
 
     int countPlayersInISFNSFs(){
-        return 0;
+       int count = 0;
+       for (int i =0; i < isfs.size(); i++){
+           count = count + isfs.get(i).countPlayersInNSFs();
+       }
+       return count;
     }
 
 }

@@ -31,6 +31,7 @@ public class NSF {
     public void setPlayers(List<Player> players){
     }
 
+
     @Override
     public String toString(){
         return this.country + this.sport;
@@ -38,11 +39,16 @@ public class NSF {
 
     public void listNSFPlayers(){
         for(int i = 0; i < players.size(); i++){
-            System.out.print(players.get(i) + ", ");
+            if (i == players.size() - 1){
+                System.out.print(players.get(i));
+            }else{
+                System.out.print(players.get(i) + ", ");
+            }
         }
     }
 
     public void addPlayer (Player player){
+        players.add(player);
     }
 
 

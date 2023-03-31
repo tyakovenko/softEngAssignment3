@@ -35,15 +35,21 @@ public class Player {
 
     @Override
     public String toString(){
-        return firstName + " " + lastName;
+        return firstName + "" + lastName;
     }
 
     public void listPlayerNSFs(){
         for(int i = 0; i < nsfs.size(); i++){
-            System.out.print(nsfs.get(i) + ", ");
+            if (i == nsfs.size() - 1){
+                System.out.print(nsfs.get(i).toString());
+            }else{
+                System.out.print(nsfs.get(i).toString() + ", ");
+            }
         }
     }
 
-    public void addNSF(NSF nsf){}
+    public void addNSF(NSF nsf){
+        nsfs.add(nsf);
+    }
 
 }
