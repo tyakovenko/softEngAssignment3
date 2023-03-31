@@ -1,28 +1,31 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class NSF {
     protected String sport;
     protected String country;
+    private List<Player> players;
 
-    public NSF (String sport, String country){
+    NSF (String sport, String country){
         this.country = country;
         this.sport = sport;
+        this.players = new ArrayList<Player>();
+
     }
     public String getSport(){
-        return "";
+        return this.sport;
     }
     public String getCountry(){
-        return "";
+        return this.country;
     }
 
     public void setSport(String sport){
     }
-
     public void setCountry(String country){
     }
 
     public List<Player> getPlayers(){
-        return null;
+        return this.players;
     }
 
     public void setPlayers(List<Player> players){
@@ -30,10 +33,13 @@ public class NSF {
 
     @Override
     public String toString(){
-        return "";
+        return this.country + this.sport;
     }
 
     public void listNSFPlayers(){
+        for(int i = 0; i < players.size(); i++){
+            System.out.print(players.get(i) + ", ");
+        }
     }
 
     public void addPlayer (Player player){

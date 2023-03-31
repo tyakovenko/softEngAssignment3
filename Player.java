@@ -1,12 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
     private String firstName;
     private String lastName;
+    private List<NSF> nsfs;
 
     public Player(String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.nsfs = new ArrayList<>();
     }
 
     public String getFirstName(){
@@ -32,10 +35,13 @@ public class Player {
 
     @Override
     public String toString(){
-        return "";
+        return firstName + " " + lastName;
     }
 
     public void listPlayerNSFs(){
+        for(int i = 0; i < nsfs.size(); i++){
+            System.out.print(nsfs.get(i) + ", ");
+        }
     }
 
     public void addNSF(NSF nsf){}
